@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", function() {
     changeColorButton.addEventListener("click", function() {
         const selectedColor = colorInput.value;
         document.body.style.backgroundColor = selectedColor;
-        let colorsss = `${++count} ${selectedColor}`
+        let colorsss = `${++count} - ${selectedColor}`
 
         selectedColors.push(colorsss);
         
-        colorOutput.textContent = `Present Selected Color: ${selectedColor}`;
+        colorOutput.textContent = `Current Selected Color: ${selectedColor}`;
         colorHistory.innerHTML = "Selected Colors:<br>" +selectedColors.join("<br>");
 
         fetch("colorChange.php", {

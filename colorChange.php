@@ -7,8 +7,8 @@ if ($data) {
     $selectedColor = $data->color;
     $username = $data->name; 
 
-    $stmt = $mysqli->prepare("INSERT INTO user_colors (username, selected_color) VALUES (?, ?)");
-    $stmt->bind_param("ss", $username, $selectedColor);
+    $stmt = $mysqli->prepare("INSERT INTO user_colors (username, selected_color) VALUES ($username, $selectedColor )");
+    $stmt->bind_param($username, $selectedColor);
 
     if ($stmt->execute()) {
         echo "Color changed and saved to the database.";
